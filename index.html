@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>VHS Digitizing</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.4.0/firebase-database.js"></script>
+    <script defer src="script.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <img src="images/Icon ionic-md-close.svg" alt="" class="close-banner-btn">
+            <a href="#" class="banner-a">
+                <img class="poster" src="" alt="">
+            </a>
+        </div>
+        <div class="profile">
+            <img src="images/Icon ionic-md-close.svg" alt="" class="close-profile-window-btn">
+            <p>Вы вошли в качестве <em class="Nickname-text"></em></p>
+            <button class="Exit">Выйти</button>
+        </div>
+        <div class="login-window">
+            <img src="images/Icon ionic-md-close.svg" alt="" class="close-login-window-btn">
+            <img src="images/Icon open-account-login.svg" class="login-icon" alt="">
+            <h1 id="login-title">Войти в личный кабинет</h1>
+            <form>
+                <input type="text" id="e-mail" placeholder="Введите e-mail...">
+                <input type="password" id="password" placeholder="Введите пароль...">
+                <input type="password" id="repeat_password" placeholder="Повторите пароль...">
+                <p class="alert">Ошибка</p>
+                <input type="submit" value="Войти" id="submit">
+                <a href="#" class="forgetPass">Забыли пароль?</a>
+                <a href="#" class="registration-btn">Не зарегистрированы?</a>
+                <a href="#" class="login-btn">Войти</a>
+            </form>
+        </div>
+        <div class="navbar">
+            <div class="menu">
+                <nav class="menu-list">
+                    <a href="/contacts.html#section1" class="menu-hidden">Сделать заказ<img
+                            src="images/Icon feather-shopping-cart.svg" alt=""></a>
+                    <a href="#" class="Nickname">UNDEFINED</a>
+                    <a href="#" class="Login"><img src="images/Icon open-account-login.svg" alt="" />Войти</a>
+                    <a href="#"><img src="images/Icon awesome-play.svg" alt=""> VHSTube</a>
+                    <a href="/reviews.html"><img src="images/Icon material-rate-review.svg" alt=""> Отзывы</a>
+                    <a href="/contacts.html#section2" class="menu-hidden">Контакты</a>
+                    <a href="/contacts.html#section3" class="menu-hidden">Цены</a>
+                    <p>
+                        Подписывайтесь на наши соц.сети
+                    </p>
+                    <div>
+                        <a href="#" class="fa"><img src="images/Icon awesome-twitter.svg" alt=""></a>
+                        <a href="#" class="fa"><img src="images/Icon awesome-instagram.svg" alt=""></a>
+                        <a href="#" class="fa"><img src="images/Icon awesome-vk.svg" alt=""></a>
+                        <a href="#" class="fa"><img src="images/Icon awesome-facebook-f.svg" alt=""></a>
+                    </div>
+                </nav>
+            </div>
+            <a href="#" class="menu-btn">
+                <span></span>
+            </a>
+            <a href="/contacts.html#section2" class="nav-element1">Контакты</a>
+            <a href="/contacts.html#section3" class="nav-element2">Цены</a>
+            <a href="/index.html" class="nav-element3">
+                <img src="images/VHS-Logo.svg" alt="VHS">
+            </a>
+            <a href="/contacts.html#section1" class="nav-element4">Сделать заказ<img
+                    src="images/Icon feather-shopping-cart.svg" alt=""></a>
+            <div href="#" class="nav-element5"><input type="text" placeholder="Поиск"><img class="search-btn"
+                    src="images/Search btn.svg" alt=""></div>
+        </div>
+        <div class="content">
+            <section class="section1" id="section1">
+                <div class="section-content">
+
+                    <img src="images/vhs-png-open-2000.png" alt="" class="background-element">
+                    <h1>Лучший сервис по
+                        оцифровке VHS кассет</h1>
+                    <p>Тем, у кого в наличии имеются видеокассеты VHS, рекомендуем произвести оцифровку этих видео
+                        кассет.
+                        При длительном
+                        хранении VHS видеокассет происходит их размагничивание и качество звука с изображением приходит
+                        в
+                        негодность. Мы
+                        предлагаем вам прозвести оцифровку VHS кассет на DVD диск, жесткий диск или флешку на выбор</p>
+                </div>
+                <a href="#section2"><img src="images/Arrow.svg" alt=""></a>
+            </section>
+            <section class="section2" id="section2">
+                <div class="section-content">
+                    <div>
+                        <h1>Аргументы в пользу оцифровки видеокассет</h1>
+                        <ol>
+                            <li>кассеты портятся: размагничиваются, слеживаются,
+                                сыпятся;</li>
+                            <li>видеомагнитофоны уже изжили себя, а покупать новый
+                                при поломке не имеет смысла;</li>
+                            <li>видеокассеты часто ломаются, особенно если попадут в
+                                руки детей;</li>
+                            <li>копирование и перезапись требует много времени,
+                                усилий и второго видеомагнитофона;</li>
+                            <li>пленка, после долгого хранения, рвется если слипается;
+                                кассеты не удобно хранить, они занимают много места;
+                            </li>
+                            <li>перемотка и поиск нужного момента занимает много
+                                времени;</li>
+                            <li>при переноске не помещаются даже в дамскую сумочку.</li>
+                        </ol>
+                    </div>
+                    <img src="images/VHS_HALF.png" alt="">
+                </div>
+                <a href="#section3"><img src="images/Arrow.svg" alt=""></a>
+            </section>
+            <section class="section3" id="section3">
+                <div class="section-content">
+                    <h1>Почему мы вам нужны?</h1>
+                    <p>Оцифровка позволяет перенести запись с кассеты на любой удобный вам носитель.</p>
+                    <ol>Преимущества:
+                        <li>можно просматривать свое видео везде где есть проигрыватель или компьютер;
+                        </li>
+                        <li>занимают мало места;</li>
+                        <li>легко отправить по почте или носить с собой;</li>
+                        <li>долговечность;</li>
+                        <li>можно делать любое число количество копий быстро и без труда;
+                        </li>
+                        <li>поиск нужных моментов занимает секунды.</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>VHS Digitizing</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.4.0/firebase-database.js"></script>
+    <script defer src="script.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <img src="images/Icon ionic-md-close.svg" alt="" class="close-banner-btn">
+            <a href="#" class="banner-a">
+                <img class="poster" src="" alt="">
+            </a>
+        </div>
+        <div class="profile">
+            <img src="images/Icon ionic-md-close.svg" alt="" class="close-profile-window-btn">
+            <p>Вы вошли в качестве <em class="Nickname-text"></em></p>
+            <button class="Exit">Выйти</button>
+        </div>
+        <div class="login-window">
+            <img src="images/Icon ionic-md-close.svg" alt="" class="close-login-window-btn">
+            <img src="images/Icon open-account-login.svg" class="login-icon" alt="">
+            <h1 id="login-title">Войти в личный кабинет</h1>
+            <form>
+                <input type="text" id="e-mail" placeholder="Введите e-mail...">
+                <input type="password" id="password" placeholder="Введите пароль...">
+                <input type="password" id="repeat_password" placeholder="Повторите пароль...">
+                <p class="alert">Ошибка</p>
+                <input type="submit" value="Войти" id="submit">
+                <a href="#" class="forgetPass">Забыли пароль?</a>
+                <a href="#" class="registration-btn">Не зарегистрированы?</a>
+                <a href="#" class="login-btn">Войти</a>
+            </form>
+        </div>
+        <div class="navbar">
+            <div class="menu">
+                <nav class="menu-list">
+                    <a href="/contacts.html#section1" class="menu-hidden">Сделать заказ<img
+                            src="images/Icon feather-shopping-cart.svg" alt=""></a>
+                    <a href="#" class="Nickname">UNDEFINED</a>
+                    <a href="#" class="Login"><img src="images/Icon open-account-login.svg" alt="" />Войти</a>
+                    <a href="#"><img src="images/Icon awesome-play.svg" alt=""> VHSTube</a>
+                    <a href="#"><img src="images/Icon material-rate-review.svg" alt=""> Отзывы</a>
+                    <a href="/contacts.html#section2" class="menu-hidden">Контакты</a>
+                    <a href="/contacts.html#section3" class="menu-hidden">Цены</a>
+                    <p>
+                        Подписывайтесь на наши соц.сети
+                    </p>
+                    <div>
+                        <a href="#" class="fa"><img src="images/Icon awesome-twitter.svg" alt=""></a>
+                        <a href="#" class="fa"><img src="images/Icon awesome-instagram.svg" alt=""></a>
+                        <a href="#" class="fa"><img src="images/Icon awesome-vk.svg" alt=""></a>
+                        <a href="#" class="fa"><img src="images/Icon awesome-facebook-f.svg" alt=""></a>
+                    </div>
+                </nav>
+            </div>
+            <a href="#" class="menu-btn">
+                <span></span>
+            </a>
+            <a href="/contacts.html#section2" class="nav-element1">Контакты</a>
+            <a href="/contacts.html#section3" class="nav-element2">Цены</a>
+            <a href="/index.html" class="nav-element3">
+                <img src="images/VHS-Logo.svg" alt="VHS">
+            </a>
+            <a href="/contacts.html#section1" class="nav-element4">Сделать заказ<img
+                    src="images/Icon feather-shopping-cart.svg" alt=""></a>
+            <div href="#" class="nav-element5"><input type="text" placeholder="Поиск"><img class="search-btn"
+                    src="images/Search btn.svg" alt=""></div>
+        </div>
+        <div class="content">
+            <section class="section1" id="sectionComment">
+                <div class="section-content" id="comments">
+
+                </div>
+                <!-- <a href="#section2"><img src="images/Arrow.svg" alt=""></a> -->
+                <div class="comment-window">
+                    <textarea name="" id="commentText" cols="30" rows="10"></textarea>
+                    <button id="Send">Send</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="81" viewBox="0 0 140 81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        font-size: 20px;
+        font-family: LesterBold, Lester;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(-239 -24)">
+    <g id="Layer_1" data-name="Layer 1" transform="translate(231.24 17)">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="12.865" height="48.8" transform="translate(56.949 12.6)"/>
+      <rect id="Rectangle_2" data-name="Rectangle 2" width="11.351" height="48.8" transform="translate(83.435 12.6)"/>
+      <path id="Path_5" data-name="Path 5" class="cls-1" d="M27,24H40.4L54.527,73.261h-13.4Z" transform="translate(-12.169 -11.597)"/>
+      <path id="Path_6" data-name="Path 6" class="cls-1" d="M99.11,24H91.866a1.3,1.3,0,0,0,0,1.589c.724,1.907.362,4.132,0,6.038L81,73.261h5.433Z" transform="translate(-46.61 -11.597)"/>
+      <path id="Path_7" data-name="Path 7" class="cls-1" d="M167.7,123H141.26L138,127.449h21.008C162.268,127.449,166.614,125.225,167.7,123Z" transform="translate(-82.964 -79.134)"/>
+      <path id="Path_8" data-name="Path 8" class="cls-1" d="M285.263,44.658c-18.472-3.178-12.315-16.526-1.811-16.526h17.024L302.649,24H280.555c-6.52,0-20.646,5.721-18.835,16.844.724,7.31,6.52,10.17,17.024,12.712,18.11,3.814,12.315,15.255,4.346,15.255H263.531l2.173,4.449h18.472c9.779,0,18.472-6.038,18.472-14.619C302.287,49.743,296.854,46.565,285.263,44.658Z" transform="translate(-161.771 -11.597)"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-2" width="140" height="60" transform="translate(7.76 7)"/>
+    </g>
+    <text id="digitizing" class="cls-3" transform="translate(267 78)"><tspan x="0" y="17">digitizing</tspan></text>
+  </g>
+</svg>
