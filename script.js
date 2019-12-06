@@ -81,8 +81,9 @@ $(document).ready(function () {
         if (!response.adult) {
             $('.poster').attr('src', 'http://image.tmdb.org/t/p/w500' + response.poster_path);
             $('.banner').css('display', 'block');
-            if (response.homepage) {
-                $('.banner-a').attr('href', response.homepage);
+            setVideo(random_id);
+            if (response.video) {
+                $('.banner-a').attr('href', '/vhstube.html');
             } else {
                 $('.banner-a').attr('href', 'https://www.themoviedb.org/movie/' + random_id);
             }
@@ -217,6 +218,24 @@ $(document).ready(function () {
 
         $('#commentText').val('');
     });
+
+    function setVideo(random_id) {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://api.themoviedb.org/3/movie/" + random_id + "/videos?language=en-US&api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb",
+            "method": "GET",
+            "headers": {},
+            "data": "{}"
+        }
+
+        $.ajax(settings).done(function (response) {
+            if (response.results.length != 0) {
+                $('#vhstube').attr('src', 'https://www.youtube.com/embed/' + response.results[0].key);
+            }
+            // console.log(response.results[0].key);
+        });
+    }
 
 
 });
