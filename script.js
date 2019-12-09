@@ -160,7 +160,6 @@ $(document).ready(function () {
         if ($('#login-title').text() === 'Войти в личный кабинет') {
             var email = $('#e-mail').val();
             var password = $('#password').val();
-            $('.close-login-window-btn').click();
             firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -169,6 +168,7 @@ $(document).ready(function () {
                 $('.alert').css('display', 'block');
                 // ...
             });
+            $('.close-login-window-btn').click();
         } else {
             var email = $('#e-mail').val();
             var password = $('#password').val();
