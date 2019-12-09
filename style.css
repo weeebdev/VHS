@@ -376,7 +376,8 @@ section {
 }
 
 .login-window form input[type=text],
-.login-window form input[type=password] {
+.login-window form input[type=password],
+#videoURL {
     width: 100%;
     height: 20%;
     background-color: #f6f6f6;
@@ -388,13 +389,15 @@ section {
 }
 
 .login-window form input[type=text],
-.login-window form input[type=password] {
+.login-window form input[type=password],
+#videoURL {
     outline: none;
 }
 
 .login-window form input[type=submit],
 .Exit,
-#Send {
+#Send,
+#submitVideo {
     border: 1px solid black;
     background-color: white;
     border-radius: 2em;

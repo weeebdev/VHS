@@ -33,6 +33,10 @@
         <div class="profile">
             <img src="images/Icon ionic-md-close.svg" alt="" class="close-profile-window-btn">
             <p>Вы вошли в качестве <em class="Nickname-text"></em></p>
+            <form>
+                <input type="text" id="videoURL">
+                <input type="submit" value="Загрузить видео" id="submitVideo">
+            </form>
             <button class="Exit">Выйти</button>
         </div>
         <div class="login-window">
@@ -86,11 +90,11 @@
                     src="images/Search btn.svg" alt=""></div>
         </div>
         <div class="content">
-            <section class="section1" id="section1">
+            <section class="section1" id="sectionVideo">
                 <div class="section-content">
-                    <iframe id="vhstube" width="560" height="315" src="https://www.youtube.com/embed/Ud5xKCYQTjM"
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <table id="videos">
+
+                    </table>
 
                 </div>
                 <!-- <a href="#section2"><img src="images/Arrow.svg" alt=""></a> -->

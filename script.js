@@ -12,6 +12,8 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var commentsRef = firebase.database().ref('comments');
+var videosRef = firebase.database().ref('videoURL');
+
 
 
 
@@ -81,12 +83,12 @@ $(document).ready(function () {
         if (!response.adult) {
             $('.poster').attr('src', 'http://image.tmdb.org/t/p/w500' + response.poster_path);
             $('.banner').css('display', 'block');
-            setVideo(random_id);
-            if (response.video) {
-                $('.banner-a').attr('href', '/vhstube.html');
-            } else {
-                $('.banner-a').attr('href', 'https://www.themoviedb.org/movie/' + random_id);
-            }
+            // setVideo(random_id);
+            // if (response.video) {
+            //     $('.banner-a').attr('href', '/vhstube.html');
+            // } else {
+            // }
+            $('.banner-a').attr('href', 'https://www.themoviedb.org/movie/' + random_id);
         }
     });
 
@@ -160,7 +162,9 @@ $(document).ready(function () {
         if ($('#login-title').text() === 'Войти в личный кабинет') {
             var email = $('#e-mail').val();
             var password = $('#password').val();
-            firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+            firebase.auth().signInWithEmailAndPassword(email, password).then(args => {
+                $('.close-login-window-btn').click();
+            }).catch(function (error) {
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -168,13 +172,16 @@ $(document).ready(function () {
                 $('.alert').css('display', 'block');
                 // ...
             });
-            $('.close-login-window-btn').click();
         } else {
             var email = $('#e-mail').val();
             var password = $('#password').val();
             var repeat_password = $('#repeat_password').val();
             if (repeat_password === password) {
-                firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+                firebase.auth().createUserWithEmailAndPassword(email, password).then(
+                    args => {
+                        $('.close-login-window-btn').click();
+                    }
+                ).catch(function (error) {
                     // Handle Errors here.
                     var errorCode = error.code;
                     var errorMessage = error.message;
@@ -191,7 +198,7 @@ $(document).ready(function () {
 
     var fileName = location.href.split("/").slice(-1)[0];
     // console.log(fileName);
-    if (fileName === 'reviews.html') {
+    if (fileName.includes('reviews.html')) {
         commentsRef.on('value', function (snapshot) {
             var comments = [];
             snapshot.forEach(function (childSnapshot) {
@@ -208,6 +215,28 @@ $(document).ready(function () {
         });
     }
 
+    if (fileName.includes('vhstube.html')) {
+        videosRef.on('value', function (snapshot) {
+            var videoTable = "<tr>";
+            var c = 0;
+            snapshot.forEach(function (childSnapshot) {
+                if (c % 3 == 0) {
+                    videoTable += "</tr><tr>";
+                }
+                var childData = childSnapshot.val();
+                var nicknameP = `<p class="NicknameV">Опубликовано: ${childData.Nickname}</p`;
+                var dateP = `<p class="DateV">${new Date(childData.Date).toGMTString()}</p>`;
+                var video = `<iframe src="https://www.youtube.com/embed/${childData.URL}" frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>`;
+                videoTable += `<td><div class="videoSection">${nicknameP}<br>${dateP}${video}</div></td>`;
+                c++;
+            });
+            videoTable += "</tr>"
+            $('#videos').html(videoTable);
+        });
+    }
+
     $('#Send').click(function () {
         var newCommentsRef = commentsRef.push();
         newCommentsRef.set({
@@ -219,23 +248,44 @@ $(document).ready(function () {
         $('#commentText').val('');
     });
 
-    function setVideo(random_id) {
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://api.themoviedb.org/3/movie/" + random_id + "/videos?language=en-US&api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb",
-            "method": "GET",
-            "headers": {},
-            "data": "{}"
+    // function setVideo(random_id) {
+    //     var settings = {
+    //         "async": true,
+    //         "crossDomain": true,
+    //         "url": "https://api.themoviedb.org/3/movie/" + random_id + "/videos?language=en-US&api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb",
+    //         "method": "GET",
+    //         "headers": {},
+    //         "data": "{}"
+    //     }
+
+    //     $.ajax(settings).done(function (response) {
+    //         if (response.results.length != 0) {
+    //             $('#vhstube').attr('src', 'https://www.youtube.com/embed/' + response.results[0].key);
+    //         }
+    //         // console.log(response.results[0].key);
+    //     });
+    // }
+
+    $('#submitVideo').click(function () {
+        var url = $('#videoURL').val();
+        console.log(url);
+        if (url === "") {
+            $('#videoURL').val('Your field is empty.');
+        } else {
+            var myRe = /(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\-_]+)/;
+            if (myRe.test(url)) {
+                console.log("It's fine");
+                var newvideosRef = videosRef.push();
+                newvideosRef.set({
+                    Date: "" + new Date(),
+                    Nickname: $('.Nickname').text(),
+                    URL: url.match(myRe)[url.match(myRe).length - 1]
+                });
+                $('#videoURL').val("");
+            } else {
+                console.log("Bruuh");
+            }
         }
 
-        $.ajax(settings).done(function (response) {
-            if (response.results.length != 0) {
-                $('#vhstube').attr('src', 'https://www.youtube.com/embed/' + response.results[0].key);
-            }
-            // console.log(response.results[0].key);
-        });
-    }
-
-
+    });
 });

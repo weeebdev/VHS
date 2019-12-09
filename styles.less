@@ -360,7 +360,7 @@ section {
 .profile {
     background-color: @background_color_1;
     width: 25%;
-    height: 25%;
+    height: 50%;
     left: 37.5%;
     top: 20%;
     display: flex;
@@ -373,6 +373,54 @@ section {
     transform: translateX(-300%);
     transition: 200ms;
     z-index: 2;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 50%;
+        align-items: center;
+    }
+}
+
+
+#submitVideo {
+    border: 1px solid black;
+    background-color: @background_color_1;
+    border-radius: 2em;
+    height: 20%;
+    width: 100%;
+    font-size: 1em;
+
+    &:hover {
+        outline: none;
+        background-color: @background_color_4;
+        cursor: pointer;
+    }
+}
+
+.videoSection {
+    background-color: #222;
+    // display: flex;
+}
+
+
+.NicknameV {
+    color: red;
+
+}
+
+
+#videoURL {
+    width: 100%;
+    height: 20%;
+    background-color: @background_color_4;
+    border: none;
+    border-radius: 2em;
+    text-align: center;
+    font-size: 1em;
+    margin: 0.5em;
+    outline: none;
 }
 
 .login-window {
@@ -521,7 +569,8 @@ section {
     margin-left: 1em;
 }
 
-.NicknameP {
+.NicknameP,
+.NicknameV {
     text-transform: uppercase;
 }
 
@@ -565,6 +614,15 @@ section {
     height: 100vh;
     margin-top: 10vh;
     position: relative;
+}
+
+#sectionVideo {
+    background: linear-gradient(to left, #4600EA, #059EF7);
+    height: auto;
+}
+
+#videos {
+    margin-top: 20vh;
 }
 
 @media only screen and (max-width: 320px) {
