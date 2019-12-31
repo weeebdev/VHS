@@ -12,17 +12,24 @@
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet/less" type="text/css" href="styles.less" />
     <script defer src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="//vk.com/js/api/openapi.js?121"></script>
+    <script type="text/javascript">
+        VK.init({
+            apiId: 5174596,
+            onlyWidgets: true
+        });
+    </script>
+    <!-- <script defer src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.4.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.4.0/firebase-database.js"></script> -->
     <script defer src="script.js"></script>
 
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="banner">
+        <!-- <div class="banner">
             <img src="images/Icon ionic-md-close.svg" alt="" class="close-banner-btn">
             <a href="#" class="banner-a">
                 <img class="poster" src="" alt="">
@@ -50,55 +57,79 @@
                 <a href="#" class="forgetPass">Забыли пароль?</a>
                 <a href="#" class="registration-btn">Не зарегистрированы?</a>
                 <a href="#" class="login-btn">Войти</a>
-            </form>
-        </div>
-        <div class="navbar">
-            <div class="menu">
-                <nav class="menu-list">
-                    <a href="/contacts.html#section1" class="menu-hidden">Сделать заказ<img
+            </form> -->
+    </div>
+    <div class="navbar">
+        <div class="menu">
+            <nav class="menu-list">
+                <!-- <a href="/contacts.html#section1" class="menu-hidden">Сделать заказ<img
                             src="images/Icon feather-shopping-cart.svg" alt=""></a>
                     <a href="#" class="Nickname">UNDEFINED</a>
                     <a href="#" class="Login"><img src="images/Icon open-account-login.svg" alt="" />Войти</a>
-                    <a href="/vhstube.html"><img src="images/Icon awesome-play.svg" alt=""> VHSTube</a>
-                    <a href="#"><img src="images/Icon material-rate-review.svg" alt=""> Отзывы</a>
-                    <a href="/contacts.html#section2" class="menu-hidden">Контакты</a>
-                    <a href="/contacts.html#section3" class="menu-hidden">Цены</a>
-                    <p>
-                        Подписывайтесь на наши соц.сети
-                    </p>
-                    <div>
+                    <a href="/vhstube.html"><img src="images/Icon awesome-play.svg" alt=""> VHSTube</a> -->
+                <a href="/reviews.html"><img src="images/Icon material-rate-review.svg" alt=""> Отзывы</a>
+                <a href="/contacts.html#section2" class="menu-hidden">Контакты</a>
+                <a href="/contacts.html#section3" class="menu-hidden">Цены</a>
+                <p>
+                    © 2012 Оцифровка видеокассет Алматы.
+                </p>
+                <!-- <div>
                         <a href="#" class="fa"><img src="images/Icon awesome-twitter.svg" alt=""></a>
                         <a href="#" class="fa"><img src="images/Icon awesome-instagram.svg" alt=""></a>
                         <a href="#" class="fa"><img src="images/Icon awesome-vk.svg" alt=""></a>
                         <a href="#" class="fa"><img src="images/Icon awesome-facebook-f.svg" alt=""></a>
-                    </div>
-                </nav>
+                    </div> -->
+            </nav>
+        </div>
+        <a href="#" class="menu-btn menu-hidden">
+            <span></span>
+        </a>
+        <a href="/index.html" class="nav-element3">
+            <img src="images/VHS-Logo.svg" alt="VHS">
+        </a>
+        <a href="/contacts.html#section2" class="nav-element1">Контакты</a>
+        <a href="/contacts.html#section3" class="nav-element2">Цены</a>
+        <a href="/reviews.html" class="nav-element4"><img src="images/Icon material-rate-review.svg" alt="">
+            Отзывы</a>
+        <!-- <div href="#" class="nav-element5"><input type="text" placeholder="Поиск"><img class="search-btn"
+                    src="images/Search btn.svg" alt=""></div> -->
+    </div>
+    <div class="content">
+        <section class="section1" id="sectionComment">
+            <div class="section-content" id="comments">
+                <p>
+                    <script type="text/javascript">
+                        VK.init({
+                            apiId: 5174596,
+                            onlyWidgets: true
+                        });
+                    </script>
+                </p>
+                <p>
+                    <!-- Put this div tag to the place, where the Comments block will be -->
+                </p>
+                <div id="vk_comments"></div>
+                <p>
+                    <script type="text/javascript">
+                        VK.Widgets.Comments("vk_comments", {
+                            redesign: 1,
+                            limit: 10,
+                            width: "665",
+                            attach: "*"
+                        });
+                    </script>
+                </p>
             </div>
-            <a href="#" class="menu-btn">
-                <span></span>
-            </a>
-            <a href="/contacts.html#section2" class="nav-element1">Контакты</a>
-            <a href="/contacts.html#section3" class="nav-element2">Цены</a>
-            <a href="/index.html" class="nav-element3">
-                <img src="images/VHS-Logo.svg" alt="VHS">
-            </a>
-            <a href="/contacts.html#section1" class="nav-element4">Сделать заказ<img
-                    src="images/Icon feather-shopping-cart.svg" alt=""></a>
-            <div href="#" class="nav-element5"><input type="text" placeholder="Поиск"><img class="search-btn"
-                    src="images/Search btn.svg" alt=""></div>
-        </div>
-        <div class="content">
-            <section class="section1" id="sectionComment">
-                <div class="section-content" id="comments">
+    </div>
+    </div>
 
-                </div>
-                <!-- <a href="#section2"><img src="images/Arrow.svg" alt=""></a> -->
-                <div class="comment-window">
-                    <textarea name="" id="commentText" cols="30" rows="10"></textarea>
-                    <button id="Send">Send</button>
-                </div>
-            </section>
-        </div>
+
+
+    </div>
+
+    </div>
+    </section>
+    </div>
     </div>
 </body>
 
