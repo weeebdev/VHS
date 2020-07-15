@@ -1,14 +1,1 @@
-<svg id="Section" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1936" height="994" viewBox="0 0 1936 994">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: url(#linear-gradient);
-      }
-    </style>
-    <linearGradient id="linear-gradient" x1="0.007" y1="0.019" x2="0.983" y2="0.969" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#4600ea" stop-opacity="0.761"/>
-      <stop offset="1" stop-color="#059ef7" stop-opacity="0.78"/>
-    </linearGradient>
-  </defs>
-  <rect id="Section-2" data-name="Section" class="cls-1" width="1936" height="994"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Section" width="1936" height="994" viewBox="0 0 1936 994"><defs><style>.cls-1{fill:url(#linear-gradient)}</style><linearGradient id="linear-gradient" x1=".007" x2=".983" y1=".019" y2=".969" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#4600ea" stop-opacity=".761"/><stop offset="1" stop-color="#059ef7" stop-opacity=".78"/></linearGradient></defs><rect id="Section-2" width="1936" height="994" class="cls-1" data-name="Section"/></svg>

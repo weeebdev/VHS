@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="46.247" height="30.195" viewBox="0 0 46.247 30.195">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-        stroke: #e0e0e0;
-        stroke-width: 10px;
-        opacity: 0.47;
-      }
-    </style>
-  </defs>
-  <path id="Arrow" class="cls-1" d="M1566.85,1054.434l19.588,19.588,19.588-19.588" transform="translate(-1563.314 -1050.898)"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="46.247" height="30.195" viewBox="0 0 46.247 30.195"><defs><style>.cls-1{fill:none;stroke:#e0e0e0;stroke-width:10px;opacity:.47}</style></defs><path id="Arrow" d="M1566.85,1054.434l19.588,19.588,19.588-19.588" class="cls-1" transform="translate(-1563.314 -1050.898)"/></svg>
